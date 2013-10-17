@@ -7,10 +7,13 @@ int main(void)
 {
     int d = -1;
 
+    /* Variable d is promoted to unsigned int.
+     * A correct way is to cast TOTAL_ELEMENTS to int.
+     */
     if(d <= TOTAL_ELEMENTS - 2){
-        printf("d (%d) is no greater than TOTAL_ELEMENTS - 2 (%d)\n", d, TOTAL_ELEMENTS - 2);
+        printf("d (%d) is no greater than TOTAL_ELEMENTS - 2 (%lu)\n", d, TOTAL_ELEMENTS - 2);
     } else {
-        printf("d (%d) is greater than TOTAL_ELEMENTS - 2 (%d)\n", d, TOTAL_ELEMENTS - 2);
+        printf("d (%d) is greater than TOTAL_ELEMENTS - 2 (%lu)\n", d, TOTAL_ELEMENTS - 2);
     }
 
     return 0;
